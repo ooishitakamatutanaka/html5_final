@@ -23,6 +23,8 @@ var downFlg  = false;
 var rightFlg = false;
 var enterflg = false;
 var startflg = false;
+var gameover = false;
+var clear    = false;
 var retryflg = false;
 var junpFlg  = false;
 var jf = false;
@@ -282,7 +284,8 @@ function randomcolor(n){
   cl[n] = {r:Math.floor(Math.random()*100),g:Math.floor(Math.random()*254),b:200/*Math.floor(Math.random()*254)*/};
 }
 function Clearflag(){
-  if(200+player.x >= imotalobj[brock-1][0] && 200+player.x <= end-scroll && 300+player.y >= imotalobj[brock-1][2] && 300+player.y <= imotalobj[brock-1][2]+10 && startflg == true){
+  if(200+player.x >= imotalobj[brock-1][0] && 200+player.x <= end-scroll && 300+player.y >= imotalobj[brock-1][2] && 300+player.y <= imotalobj[brock-1][2]+10 && startflg == true && gameover == false){
+    clear == true;
     retryflg = true;
     player.speed = 0;
     bgspeed = 0;
@@ -301,7 +304,8 @@ function Clearflag(){
 }
 function GameOver(){
   if(300+player.y >= 500 || 200+player.x <= 10){
-    if(startflg == true){
+    if(startflg == true && clear == false){
+      gameover = true;
       retryflg = true;
       player.speed = 0;
       bgspeed = 0;
