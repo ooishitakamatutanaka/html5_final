@@ -289,6 +289,7 @@ function Clearflag(){
     retryflg = true;
     player.speed = 0;
     bgspeed = 0;
+
     ctx.font = "48px 'ＭＳ Ｐゴシック'";
     ctx.fillStyle = 'rgb(250, 250, 0)';
     ctx.fillText("GAMECLEAR!", 300, 150,400);
@@ -300,6 +301,7 @@ function Clearflag(){
     textcol += textcount;
     ctx.fillStyle = 'rgba(0, 0, 0, '+textcol+')';
     ctx.fillText("- RETRY ENTER -", 330, 250,200);
+
   }
 }
 function GameOver(){
@@ -309,6 +311,7 @@ function GameOver(){
       retryflg = true;
       player.speed = 0;
       bgspeed = 0;
+
       ctx.font = "48px 'ＭＳ Ｐゴシック'";
       ctx.fillStyle = 'rgb(250, 0, 0)';
       ctx.fillText("GAMEOVER", 300, 150,400);
@@ -320,6 +323,7 @@ function GameOver(){
       textcol += textcount;
       ctx.fillStyle = 'rgba(0, 0, 0, '+textcol+')';
       ctx.fillText("- RETRY ENTER -", 325, 250,200);
+
     }
   }
 }
@@ -354,7 +358,8 @@ function start(){
 
 }
 function retry(){
-    if(enterflg == true && retryflg == true)
+    if(enterflg == true && retryflg == true){
       location.reload(true);
+    }
 }
 }
