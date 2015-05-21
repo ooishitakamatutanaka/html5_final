@@ -1,5 +1,5 @@
 ﻿//
-// 2015/05/14
+// 2015/05/21
 // ooisi
 // ファイル名：circleaction.js
 // id＝canvaswalk
@@ -41,7 +41,7 @@ var count = -10;
 
 var bgspeed = 0; //スクロールスピード
 var scroll = 0;
-var brock = 10; //ブロック数
+var brock = 40; //ブロック数
 
 var bar = 200;
 var textcol = 1; //透明度（０～１）
@@ -74,7 +74,7 @@ function keyDownFunc(e){
           if(retryflg == true)
           enterflg = true;
           startflg = true;
-          bgspeed = 6;  //スピード
+          bgspeed = 4;  //スピード
         }
 }
 
